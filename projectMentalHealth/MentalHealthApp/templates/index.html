@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health RISK Dashboard</title>
+</head>
+
+<body>
+    <h1>Mental Health RISK Dashboard</h1>
+
+    <form method="post" action="{% url 'predictor' %}">
+        {% csrf_token %}
+        <input type="number" id="depression_score" name="dep_s" size="10" placeholder="Enter Depression Score"
+            required /> <br>
+        <input type="number" id="anxiety_score" name="anx_s" size="10" placeholder="Enter Anxiety Score" required />
+        <br>
+        <input type="number" id="productivity_score" name="pro_s" size="10" placeholder="Enter Productivity Score"
+            required /> <br>
+
+        <button type="submit">Predict risk of mental health issues</button>
+    </form>
+</body>
+
+</html>
