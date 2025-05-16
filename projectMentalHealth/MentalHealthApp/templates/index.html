@@ -8,19 +8,25 @@
 </head>
 
 <body>
-    <h1>Mental Health RISK Dashboard</h1>
+    <center>
+        <h1>Mental Health RISK Dashboard</h1>
+        <div>
+            <center>
+                <form method="post" action="{% url 'predictor' %}">
+                    {% csrf_token %}
+                    <input type="number" id="depression_score" name="dep_s" size="10"
+                        placeholder="Enter Depression Score" required /> <br>
+                    <input type="number" id="anxiety_score" name="anx_s" size="10" placeholder="Enter Anxiety Score"
+                        required />
+                    <br>
+                    <input type="number" id="productivity_score" name="pro_s" size="10"
+                        placeholder="Enter Productivity Score" required /> <br> <br> <br>
 
-    <form method="post" action="{% url 'predictor' %}">
-        {% csrf_token %}
-        <input type="number" id="depression_score" name="dep_s" size="10" placeholder="Enter Depression Score"
-            required /> <br>
-        <input type="number" id="anxiety_score" name="anx_s" size="10" placeholder="Enter Anxiety Score" required />
-        <br>
-        <input type="number" id="productivity_score" name="pro_s" size="10" placeholder="Enter Productivity Score"
-            required /> <br>
-
-        <button type="submit">Predict risk of mental health issues</button>
-    </form>
+                    <button type="submit">Predict risk of mental health issues</button>
+                </form>
+            </center>
+        </div>
+    </center>
 </body>
 
 </html>
