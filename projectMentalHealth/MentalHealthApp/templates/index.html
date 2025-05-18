@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health RISK Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
 </head>
 
 <body>
     <center>
         <h1>Mental Health RISK Dashboard</h1>
-        <div>
+        <div id="input_div" class="container">
             <center>
                 <form method="post" action="{% url 'predictor' %}">
                     {% csrf_token %}
